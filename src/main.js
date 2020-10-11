@@ -10,6 +10,12 @@ import 'reset.css'
 import MyPlugin from './plug/index'
 Vue.use(MyPlugin);
 
+import VideoPlayer from 'vue-video-player'
+import 'vue-video-player/src/custom-theme.css'
+import 'video.js/dist/video-js.css'
+ 
+Vue.use(VideoPlayer)
+
 // import vueSwiper from 'vue-awesome-swiper'
 // import 'swiper/dist/css/swiper.css'
 // Vue.use(vueSwiper)
@@ -23,9 +29,12 @@ Vue.use(ElementUI)
 
 Vue.config.productionTip = false
 
-// router.beforeEach((to, from, next) => {
-//   // ...
-// })
+router.beforeEach((to, from, next) => {
+  if (to.meta.title) {
+    document.title = to.meta.title
+  }
+  next()
+})
 
 // router.beforeResolve((to, from, next) => {
 //   // if(to.name === 'Two'){

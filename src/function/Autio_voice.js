@@ -1,4 +1,3 @@
-import Mp3 from '../assets/1.mp3'
 var n = new Audio();
 
 class AutioVoice {
@@ -6,7 +5,7 @@ class AutioVoice {
   Broadcast (str=null) {
     var url = "http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&text=" + encodeURI(str);        // baidu
     if (str == null) {
-　　  n.src = Mp3;
+// 　　  n.src = Mp3;
     }else{
 　　  n.src = url;
     }

@@ -8,6 +8,7 @@ const routes = [
   {
     path: '/',
     name: 'Index',
+    meta:{title: '首页'},
     component: resolve =>require(['../views/Index.vue'],resolve)
   },
   {
